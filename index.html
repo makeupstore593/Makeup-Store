@@ -3,94 +3,80 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mi Tienda de Maquillaje</title>
-<style>
-body{
-    font-family: Arial, sans-serif;
-    margin:0;
-    background:#ffe6f0;
-}
-header{
-    background:#ff4da6;
-    color:white;
-    text-align:center;
-    padding:20px;
-}
-.productos{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:20px;
-    padding:20px;
-}
-.producto{
-    background:white;
-    border-radius:10px;
-    padding:15px;
-    width:250px;
-    text-align:center;
-    box-shadow:0 0 10px rgba(0,0,0,0.2);
-}
-button{
-    background:#ff4da6;
-    color:white;
-    border:none;
-    padding:10px 15px;
-    border-radius:5px;
-}
-footer{
-    text-align:center;
-    padding:15px;
-    background:#ff4da6;
-    color:white;
-}
-</style>
+
+<title>Makeup Store</title>
+
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <header>
-<h1>Mi Tienda de Maquillaje</h1>
-<p>Los mejores productos para resaltar tu belleza</p>
+    <h1>💄 Makeup Store</h1>
+    <p>Productos de maquillaje para resaltar tu belleza ✨</p>
 </header>
+
+<nav>
+    <button onclick="mostrarCarrito()">🛒 Carrito (<span id="contador">0</span>)</button>
+</nav>
 
 <section class="productos">
 
 <div class="producto">
-<h2>Labial Mate</h2>
-<p>$8.99</p>
-<button>Comprar</button>
+    <img src="https://via.placeholder.com/250" alt="Labial">
+    <h2>Labial Mate</h2>
+    <p>$8.99</p>
+    <button onclick="agregarProducto('Labial Mate',8.99)">
+        Agregar al carrito
+    </button>
 </div>
 
-<div class="producto">
-<h2>Base Líquida</h2>
-<p>$14.99</p>
-<button>Comprar</button>
-</div>
 
 <div class="producto">
-<h2>Paleta de Sombras</h2>
-<p>$18.99</p>
-<button>Comprar</button>
+    <img src="https://via.placeholder.com/250" alt="Base">
+    <h2>Base Líquida</h2>
+    <p>$14.99</p>
+    <button onclick="agregarProducto('Base Líquida',14.99)">
+        Agregar al carrito
+    </button>
+</div>
+
+
+<div class="producto">
+    <img src="https://via.placeholder.com/250" alt="Sombras">
+    <h2>Paleta de Sombras</h2>
+    <p>$18.99</p>
+    <button onclick="agregarProducto('Paleta de Sombras',18.99)">
+        Agregar al carrito
+    </button>
 </div>
 
 </section>
 
-<footer>
-©️ 2025 Mi Tienda de Maquillaje
 
-</footer>
+<div id="carrito" class="carrito">
 
-<hr>
+<h2>🛒 Tu pedido</h2>
 
-<h2>🛒 Carrito de Compras</h2>
-
-<ul id="lista-carrito"></ul>
+<div id="lista-carrito"></div>
 
 <h3>Total: $<span id="total">0.00</span></h3>
 
 <button onclick="enviarWhatsApp()">
-Enviar pedido por WhatsApp
+Enviar pedido por WhatsApp 💬
 </button>
+
+<button onclick="cerrarCarrito()">
+Cerrar
+</button>
+
+</div>
+
+
+<footer>
+©️ Makeup Store
+</footer>
+
 
 <script src="script.js"></script>
 
