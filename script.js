@@ -1,3 +1,9 @@
+import { db } from "./firebase.js";
+
+import {
+  collection,
+  getDocs
+} from "https://www.gstatic.com/firebasejs/12.6.0/firebase-firestore.js";
 let carrito = [];
 
 function agregarProducto(nombre, precio) {
@@ -143,3 +149,39 @@ function enviarWhatsApp(){
     );
 
 }
+async function cargarProductos() {
+
+    const contenedor = document.getElementById("productos");
+    contenedor.innerHTML = "";
+
+    const consulta = await getDocs(collection(db, "productos"));
+
+    consulta.forEach((doc) => {
+
+        const producto = doc.data();
+
+        contenedor.innerHTML += `
+        <div class="producto">
+            <img src="${producto.Imagen}" alt="${producto.Nombre}">
+            <div class="info-producto">
+                <h2>${producto.Nombre}</h2>
+                <p>${producto.Descripcion}</p>
+                <p class="precio">$${producto.Precio}</p>
+
+                <button onclick="agregarProducto('${producto.Nombre}', ${producto.Precio})">
+                    Agregar al carrito 🛒
+                </button>
+            </div>
+        </div>
+        `;
+    });
+
+}
+
+cargarProductos();
+window.agregarProducto = agregarProducto;
+window.cambiarCantidad = cambiarCantidad;
+window.eliminarProducto = eliminarProducto;
+window.mostrarCarrito = mostrarCarrito;
+window.cerrarCarrito = cerrarCarrito;
+window.enviarWhatsApp = enviarWhatsApp;
