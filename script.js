@@ -151,7 +151,7 @@ function enviarWhatsApp(){
 }
 async function cargarProductos() {
 
-    const contenedor = document.getElementById("productos");
+    const contenedor = document.getElementById("Productos");
     contenedor.innerHTML = "";
 
     const consulta = await getDocs(collection(db, "Productos"));
