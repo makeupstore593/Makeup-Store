@@ -23,43 +23,7 @@
     <button onclick="mostrarCarrito()">🛒 Carrito (<span id="contador">0</span>)</button>
 </nav>
 
-<section class="productos">
-
-<div class="producto">
-    <img src="https://via.placeholder.com/250" alt="Labial">
-    <div class="info-producto">
-        <h2>💄 Labial Mate</h2>
-        <p class="precio">$8.99</p>
-        <button onclick="agregarProducto('Labial Mate',8.99)">
-            Agregar al carrito 🛒
-        </button>
-    </div>
-</div>
-
-
-<div class="producto">
-    <img src="https://via.placeholder.com/250" alt="Base">
-    <div class="info-producto">
-        <h2>✨ Base Líquida</h2>
-        <p class="precio">$14.99</p>
-        <button onclick="agregarProducto('Base Líquida',14.99)">
-            Agregar al carrito 🛒
-        </button>
-    </div>
-</div>
-
-
-<div class="producto">
-    <img src="https://via.placeholder.com/250" alt="Sombras">
-    <div class="info-producto">
-        <h2>🌸 Paleta de Sombras</h2>
-        <p class="precio">$18.99</p>
-        <button onclick="agregarProducto('Paleta de Sombras',18.99)">
-            Agregar al carrito 🛒
-        </button>
-    </div>
-</div>
-
+<section class="productos" id="productos">
 </section>
 
 
@@ -87,7 +51,7 @@ Cerrar
 </footer>
 
 
-<script src="script.js"></script>
+<script type="module" src="script.js"></script>
 
 </body>
 </html>
