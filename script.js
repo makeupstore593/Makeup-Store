@@ -154,7 +154,7 @@ async function cargarProductos() {
     const contenedor = document.getElementById("productos");
     contenedor.innerHTML = "";
 
-    const consulta = await getDocs(collection(db, "productos"));
+    const consulta = await getDocs(collection(db, "Productos"));
 
     consulta.forEach((doc) => {
 
